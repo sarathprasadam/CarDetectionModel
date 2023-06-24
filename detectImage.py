@@ -67,8 +67,8 @@ def imageDetect(master, imagepath, classVariable, canvas):
         print("No prediction Done")
         messagebox.showerror(title="Error", message=msg)
         return None
-        pass
-    pass
+
+
 
 def apply_NonMaxSuppression(orig_prediction, iou_thresh=0.3):
     '''

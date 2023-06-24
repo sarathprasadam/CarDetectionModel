@@ -83,12 +83,13 @@ class Feedback:
     def processImage(self):
         image_path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg;*.jpeg;*.png")])
         #self.class_variable.set("Sk_class")
-        file_=imageDetect(self.master, image_path, self.class_variable, self.text_comments)
-        if file_!=None:
-         self.detect_imageFile =file_
+        if(image_path!=""):
+            file_=imageDetect(self.master, image_path, self.class_variable, self.text_comments)
+            if file_!=None:
+                self.detect_imageFile =file_
 
 
-        pass
+
     def clearData(self):
         self.class_variable.set('')
         self.text_comments.delete(ALL)
