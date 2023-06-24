@@ -1,12 +1,10 @@
 from tkinter import *
 from tkinter import messagebox
-from tkinter import ttk
 import cv2
 import numpy as np
 import torch
 import torchvision
 from PIL import Image,ImageDraw
-from torchvision import transforms as torchtrans
 from torchvision.transforms import transforms
 #import matplotlib.pyplot as plt
 #import matplotlib.patches as patches
@@ -90,14 +88,7 @@ def apply_NonMaxSuppression(orig_prediction, iou_thresh=0.3):
     final_prediction[0]['labels'] = final_prediction[0]['labels'][keep]
     return final_prediction[0]
 
-def convert_torch_to_pil(img):
-    '''
-    This function converts a torchtensor back to PIL image:
-    Arguments:
-    1. torchtensor
-    '''
 
-    return torchtrans.ToPILImage()(img).convert('RGB')
 
 def setBBImage(target,scale_x,scale_y,canvas,showBbox='yes', predict='no'):
     if predict == 'no':

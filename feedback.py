@@ -35,7 +35,7 @@ class Feedback:
         self.process_button=Button(self.frame_content, text="Choose", command=self.processImage)
         self.process_button.grid(row=0, column=1, padx=5, pady=5, sticky='sw',columnspan=2)
         ttk.Label(self.frame_content, text='Class:').grid(row=1, column=0, padx=5,pady=5,ipadx=5,ipady=5)
-        self.class_name = ttk.Entry(self.frame_content, width=24, font=('Arial', 10,'bold'))
+        self.class_name = ttk.Entry(self.frame_content, width=48, font=('Arial', 10,'bold'))
         self.class_name.state(['readonly'])
         self.class_variable = StringVar()
         self.class_name.configure(textvariable=self.class_variable,foreground="Red")
@@ -105,7 +105,8 @@ class Feedback:
     def downloadImage(self):
         if self.detect_imageFile is not None:
             current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
-            default_filename = "BBImage_"+current_datetime+".jpg"
+            default_filename = '_'.join(self.class_variable.get().split())
+            default_filename = default_filename+"_"+current_datetime+".jpg"
             destination_path = filedialog.asksaveasfilename(defaultextension='.jpg',
                                                             filetypes=[("JPEG files", "*.jpg")],
                                                             initialfile=default_filename)
