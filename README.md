@@ -24,4 +24,4 @@ cd ../CarDetectionModel
 python main.py
 ```
 
-  ![Application Image](Images/application_image.png)
+  ![Application Image](Images/application_image.gif)
