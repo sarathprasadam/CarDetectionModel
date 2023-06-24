@@ -23,4 +23,5 @@ cd ../CarDetectionModel
  ```shell
 python main.py
 ```
-4.Car Detection Model GUI will appear.
+4. Car Detection Model GUI will appear.
+  ![Application Image](Images/application_image.png)
