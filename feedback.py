@@ -113,6 +113,7 @@ class Feedback:
         self.class_variable.set('')
         self.text_comments.delete(ALL)
         self.detect_image_item = None
+        self.detect_imageFile = None
 
 
 

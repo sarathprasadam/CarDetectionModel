@@ -31,11 +31,11 @@ def clickInfo(master,kind):
         tree.heading("LinkedIn Link", text="LinkedIn Link")
 
         # Add data to the table
-        tree.insert("", "end", text="1", values=("Anupam Chakraborty", "https://www.linkedin.com"))
+        tree.insert("", "end", text="1", values=("Anupam Chakraborty", "https://www.linkedin.com/in/anupam-chakraborty-434640b8/"))
         tree.insert("", "end", text="2", values=("Sarath M", "https://www.linkedin.com/in/sarath-mohan-kdm"))
         tree.insert("", "end", text="3", values=("Boobalan.m.k", "https://www.linkedin.com"))
-        tree.insert("", "end", text="4", values=("Fini Sabu", "https://www.linkedin.com"))
-        tree.insert("", "end", text="5", values=("Saiteja Thota", "https://www.linkedin.com"))
+        tree.insert("", "end", text="4", values=("Fini Sabu", "https://www.linkedin.com/in/fini-sabu/"))
+        tree.insert("", "end", text="5", values=("Saiteja Thota", "https://www.linkedin.com/in/saiteja-thota/"))
 
         # Configure column widths
         tree.column("#0", width=50)

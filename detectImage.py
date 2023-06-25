@@ -12,6 +12,8 @@ from PIL import ImageTk
 def imageDetect(master, imagepath, classVariable, canvas):
     # load image:
     car_image = cv2.imread(imagepath)
+    if (car_image is None):
+        return None
     original_size = (car_image.shape[1], car_image.shape[0])
     cv2.imwrite("Detections//original.jpg" ,car_image)
     #print(imagepath)
