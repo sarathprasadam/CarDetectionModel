@@ -10,7 +10,10 @@ class Feedback:
     def __init__(self, master):
         self.master = master
         master.title("Car Detection Model")
-        master.iconbitmap("Images//logo1.ico")
+        try:
+            master.iconbitmap("Images//logo1.ico")
+        except:
+            master.iconbitmap("Images\logo1.ico")
 
         master.resizable(False, False)
         master.configure(background='#e1d8b9')
@@ -28,7 +31,10 @@ class Feedback:
         self.frame_content.pack()
         self.header_text = ttk.Label(self.frame_header, text='Car Detection Model', style='Header.TLabel')
         self.header_text.grid(row=0, column=1,rowspan = 2)
-        self.logo_file = PhotoImage(file='Images//logo.png').subsample(4,4)
+        try:
+            self.logo_file = PhotoImage(file='Images//logo.png').subsample(4,4)
+        except:
+            self.logo_file = PhotoImage(file='Images\logo.png').subsample(4, 4)
         self.logo = ttk.Label(self.frame_header, image = self.logo_file)
         self.logo.grid(row=0, column=0, rowspan=2)
         ttk.Label(self.frame_content, text='Select Image :').grid(row=0, column=0, padx=5, pady=5,ipadx=5,ipady=5)
@@ -62,17 +68,30 @@ class Feedback:
 
 
         self.themes_menu = Menu(self.menuLst)
-        self.theme = PhotoImage(file="Images//theme.png").subsample(20, 20)
+        try:
+            self.theme = PhotoImage(file="Images//theme.png").subsample(20, 20)
+        except:
+            self.theme = PhotoImage(file="Images\theme.png").subsample(20, 20)
         self.menuLst.add_cascade(menu=self.themes_menu, label="Themes",image=self.theme,compound='left')
-        self.aboutImage = PhotoImage(file="Images//info.png").subsample(20, 20)
+        try:
+            self.aboutImage = PhotoImage(file="Images//info.png").subsample(20, 20)
+        except:
+            self.aboutImage = PhotoImage(file="Images\info.png").subsample(20, 20)
         self.about = Menu(self.menuLst)
         self.menuLst.add_cascade(menu=self.about, label="About",image=self.aboutImage, compound='left')
         #self.menuLst.add_command(label="About", command=self.infoClick,image=self.aboutImage,compound='left')
-        self.default = PhotoImage(file="Images//default.png").subsample(10, 22)
-        self.light = PhotoImage(file="Images//light.png").subsample(22, 18)
-        self.dark = PhotoImage(file="Images//dark.png").subsample(20, 20)
-        self.contri= PhotoImage(file="Images//contirbuters.png").subsample(10,10)
-        self.soft=PhotoImage(file="Images//software.png").subsample(42,36)
+        try:
+            self.default = PhotoImage(file="Images//default.png").subsample(10, 22)
+            self.light = PhotoImage(file="Images//light.png").subsample(22, 18)
+            self.dark = PhotoImage(file="Images//dark.png").subsample(20, 20)
+            self.contri= PhotoImage(file="Images//contirbuters.png").subsample(10,10)
+            self.soft=PhotoImage(file="Images//software.png").subsample(42,36)
+        except:
+            self.default = PhotoImage(file="Images\default.png").subsample(10, 22)
+            self.light = PhotoImage(file="Images\light.png").subsample(22, 18)
+            self.dark = PhotoImage(file="Images\dark.png").subsample(20, 20)
+            self.contri = PhotoImage(file="Images\contirbuters.png").subsample(10, 10)
+            self.soft = PhotoImage(file="Images\software.png").subsample(42, 36)
         # Add theme options to the "Themes" menu
         self.themes_menu.add_command( label='Default', image=self.default, compound='left', command=lambda: self.change_theme('Default'))
         self.themes_menu.add_command(label='Light', image=self.light, compound='left', command=lambda: self.change_theme('Light'))
